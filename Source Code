@@ -1,0 +1,120 @@
+package com.mycompany.multidimensi;
+import java.util.Scanner;
+public class Multidimensi {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int transaksiLagi = 0;
+                do{
+                    int pilih=0, jml=0, total=0, baris=0, kolom=0, grandTotal=0;
+                    
+                    String barang[]=new String[5];
+                    int nota[][]=new int [5][3];
+                           do{
+                               System.out.println("                Toko Rasya               ");
+                               System.out.println("      JL. Simpang Lima No 14 Blora       ");
+                               System.out.println("=========================================");
+                               System.out.println("1. Hoodie\n2. Topi\n3. Kaos\n4. Selesai");
+                               System.out.print("Pilih    : "); pilih=sc.nextInt();
+                                                            
+                               switch(pilih){
+                                   case 1:
+                                       System.out.println("Hoodie                      [Rp. 125.000]");
+                                       if(baris<5){
+                                           barang[baris] = "Hoodie";
+                                           nota[baris][0] = 125000;
+                                           System.out.print("Jumlah   : "); jml=sc.nextInt();
+                                           nota[baris][1]=jml;
+                                           nota[baris][2]=nota[baris][0]*nota[baris][1];
+                                           
+                                           grandTotal += nota[baris][2];
+                                                                                              
+                                           baris++;
+                                                                                      
+                                           System.out.println("Total belanja                : Rp. "+grandTotal);
+                                                   
+                                                   
+                                       }else{
+                                           System.out.println("Keranjang Penuh!");
+                                       }
+                                       System.out.println(" ");
+                                       break;
+                                   case 2:
+                                       System.out.println("Topi                        [Rp. 100.000]");
+                                       if(baris<5){
+                                           barang[baris] = "Topi";
+                                           nota[baris][0] = 100000;
+                                           System.out.print("Jumlah   : "); jml=sc.nextInt();
+                                           nota[baris][1]=jml;
+                                           nota[baris][2]=nota[baris][0]*nota[baris][1];
+                                           
+                                           grandTotal += nota[baris][2];
+                                           
+                                           baris++;
+                                           
+                                           
+                                           System.out.println("Total belanja                : Rp. "+grandTotal);
+                                                   
+                                                   
+                                       }else{
+                                           System.out.println("Keranjang Penuh!");
+                                       }
+                                       System.out.println(" ");
+                                       break;
+                                   case 3:
+                                       System.out.println("Kaos                        [Rp. 75.000]");
+                                       if(baris<5){
+                                           barang[baris] = "Kaos";
+                                           nota[baris][0] = 75000;
+                                           System.out.print("Jumlah   : "); jml=sc.nextInt();
+                                           nota[baris][1]=jml;
+                                           nota[baris][2]=nota[baris][0]*nota[baris][1];
+                                           
+                                           grandTotal += nota[baris][2];
+                                           
+                                           baris++;
+                                           
+                                          
+                                           System.out.println("Total belanja                : Rp. "+grandTotal);
+                                                   
+                                                   
+                                       }else{
+                                           System.out.println("Keranjang Penuh!");
+                                       }
+                                       System.out.println(" ");
+                                       break;
+                                   case 4:
+                                       System.out.println("---------------------------------------------------------------");
+                                       System.out.println("             Daftar Belanja              ");
+                                       System.out.println("---------------------------------------------------------------");
+                                       System.out.println("No\tBarang\t\tHarga\t\tQty\t\tTotal");
+                                       System.out.println("---------------------------------------------------------------");
+                                       for (int i = 0; i < baris; i++) {
+                                           System.out.print((i+1)+ ". \t");
+                                           System.out.print(barang[i]+ "\t \t");
+                                           System.out.print(nota[i][0]+"\t \t");
+                                           System.out.print(nota[i][1]+"\t \t");
+                                           System.out.println(nota[i][2]);
+                                          
+                                       }
+                                        System.out.println("---------------------------------------------------------------");
+                                        System.out.println("                                       Grand Total : Rp. "+grandTotal);
+                                        System.out.println("---------------------------------------------------------------");
+                                       System.out.println(" ");
+                                       System.out.println("Matur Suwun...");
+                                       
+                                       break;
+                                   default:
+                                       System.out.println("Pilihan Tidak Ada!!1");
+                               }
+                               
+                           }while(pilih!=4);
+                           System.out.println("\nApakah ingin melakukan transaksi kembali?");
+                           System.out.println("[1]Ya\n[2]Tidak"); 
+                           System.out.print("Pilih    : ");transaksiLagi=sc.nextInt();
+                           
+                    
+                }while(transaksiLagi==1);
+                System.out.println("See You....");
+                System.out.println("");
+    }
+}
